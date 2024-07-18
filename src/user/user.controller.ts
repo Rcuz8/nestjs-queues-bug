@@ -18,9 +18,4 @@ export class UserController {
       const user = await this.userService.createResilient(createUserRequest);
       return user;
   }
-
-  @Delete('admin/queue/drain')
-  async drainCreatedUserQueue(): Promise<void> {
-    return this.userService.drainQueue();
-  }
 }

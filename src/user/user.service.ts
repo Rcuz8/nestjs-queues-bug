@@ -37,10 +37,4 @@ export class UserService {
     // Put it right into the queue
     await this.queueUserForCreation(createUserRequest);
   }
-
-  async drainQueue(): Promise<void> {
-    await this.createUserQueue.pause();
-    await this.createUserQueue.drain();
-    await this.createUserQueue.resume();
-  }
 }
